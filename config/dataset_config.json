@@ -1,0 +1,16 @@
+{
+  "location": "Bhopal, India",
+  "center_lat": 23.2599,
+  "center_lon": 77.4126,
+  "radius_km": 50.0,
+  "target_samples": 1500,
+  "start_date": "2024-01-01",
+  "end_date": "2025-12-31",
+  "max_cloud_coverage": 20.0,
+  "max_date_difference_days": 3,
+  "image_size": 256,
+  "workers": 5,
+  "random_seed": 42,
+  "sampling_strategy": "stratified",
+  "output_dir": "data/raw/bhopal_satellite"
+}

@@ -1,0 +1,34 @@
+{
+  "project_name": "AI-Based Early Vector-Borne Disease Prevention System",
+  "dashboard_name": "VectorSafe AI \u2013 Environmental Mosquito Suitability Dashboard",
+  "study_area": "Bhopal, India",
+  "collection_radius_km": 50,
+  "date_range": "2024-01-01 to 2024-06-30",
+  "target_name": "Environmental Mosquito Suitability Score (EMSS)",
+  "target_column": "ERI_target",
+  "target_scale": "0-100",
+  "score_interpretation": "Formula-derived environmental suitability proxy; not confirmed dengue prediction, disease diagnosis, observed mosquito abundance, or confirmed breeding-ground detection.",
+  "risk_bands": {
+    "Low": "0.00-33.33",
+    "Medium": "33.34-66.66",
+    "High": "66.67-100.00"
+  },
+  "satellite_source": "Copernicus Sentinel-2 L2A accessed through Microsoft Planetary Computer",
+  "weather_source": "Open-Meteo Historical Weather API, using ECMWF ERA5 / ERA5-Land where applicable",
+  "model_pipeline": "RF1 Random Forest environmental model + ResNet-18 satellite-image features + RF2 Random Forest fusion",
+  "alignment_status": "PASS",
+  "alignment_counts": {
+    "train": 3321,
+    "validation": 712,
+    "test": 712
+  },
+  "model_version": "Existing RF2 artifact; formal run manifest pending",
+  "target_version": "EMSS: temperature 0.40, humidity 0.30, precipitation 0.30",
+  "limitations": [
+    "EMSS is a formula-derived environmental proxy.",
+    "The system does not predict confirmed dengue cases or disease outbreaks.",
+    "The system does not confirm mosquito presence or breeding grounds.",
+    "Low, Medium, and High bands are visualization thresholds for inspection prioritization.",
+    "Results apply only to stored Bhopal-area samples within a 50 km radius and the documented date range."
+  ]
+}

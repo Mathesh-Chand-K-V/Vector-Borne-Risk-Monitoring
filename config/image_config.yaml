@@ -1,0 +1,25 @@
+data:
+  master_csv: data/interim/environmental_risk/master_dataset_with_emss.csv
+  image_dir: data/raw/bhopal_satellite
+  output_dir: data/processed/multimodal_splits
+  report_dir: reports/image_pipeline
+split:
+  train: 0.7
+  validation: 0.15
+  test: 0.15
+  random_seed: 42
+image:
+  size: 224
+  channels: 3
+training:
+  batch_size: 32
+  num_workers: 4
+model:
+  name: resnet18
+  pretrained: true
+columns:
+  sample_id: sample_id
+  image_path: image_path
+  target: ERI_target
+  group: spatial_group
+  date: requested_date
